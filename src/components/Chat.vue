@@ -36,7 +36,6 @@ export default {
     messagesCollection.onSnapshot((query) => {
       this.messages = [];
       query.forEach((q) => {
-        console.log(q.data());
         this.messages.push(q.data());
       });
     });
