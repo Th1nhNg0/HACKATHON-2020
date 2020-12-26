@@ -13,8 +13,8 @@ Vue.use(
   new VueSocketIO({
     // debug: true,
     debug: false,
-    // connection: "thinh-project-x-backend.herokuapp.com",
-    connection: "172.16.29.186:3000",
+    connection: window.location.pathname,
+    // connection: "192.168.137.160:3000",
     vuex: {
       store,
       actionPrefix: "SOCKET_",
