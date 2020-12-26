@@ -6,7 +6,7 @@
       <input
         class="p-4 w-8/12 rounded-2xl"
         type="text"
-        placeholder="Search ..."
+        placeholder="Tìm kiếm ..."
       />
       <div class="grid grid-cols-3 gap-5 pt-10 w-full">
         <div

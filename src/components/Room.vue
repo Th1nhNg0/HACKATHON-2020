@@ -1,7 +1,7 @@
 <template>
   <div class="text-center p-5 ">
     <div class="flex justify-between px-5">
-      <span class="font-bold text-3xl ">Room List</span>
+      <span class="font-bold text-3xl ">Danh sách phòng chơi</span>
       <button
         @click="createRoom"
         class="bg-green-500 px-4 py-2 rounded-2xl text-white font-bold shadow-md"
@@ -15,9 +15,9 @@
           class="grid grid-cols-12  font-bold px-5 py-3"
           style="min-width: 400px"
         >
-          <div class="col-span-7">Room Name</div>
-          <div class="col-span-3">Status</div>
-          <div class="col-span-2">Players</div>
+          <div class="col-span-7">Tên phòng</div>
+          <div class="col-span-3">Trạng thái</div>
+          <div class="col-span-2">Số người chơi</div>
         </div>
         <!-- content -->
         <div class="flex flex-col gap-5">

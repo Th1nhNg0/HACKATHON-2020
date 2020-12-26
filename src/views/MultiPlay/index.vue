@@ -18,14 +18,14 @@
         v-show="!room.canJoin"
         class="py-4 px-5 bg-yellow-500 text-white font-bold rounded-full text-xl flex justify-center items-center"
       >
-        Time left : {{ Math.max(room.questionTimeLeft, 0) }}s
+        Thời gian : {{ Math.max(room.questionTimeLeft, 0) }}s
       </div>
 
       <div
         v-show="!room.canJoin"
         class="py-4 px-5 bg-green-500 text-white font-bold rounded-full text-xl flex justify-center items-center"
       >
-        Score: {{ myScore }}
+        Số điểm: {{ myScore }}
       </div>
     </div>
     <div class="w-full h-full">

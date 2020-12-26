@@ -4,12 +4,12 @@
     <h1 class="text-center text-4xl text-white font-bold">
       Bảng xếp hạng
     </h1>
-    <table class="w-full text-left mt-5  bg-white rounded-2xl shadow-lg">
+    <table class="w-full text-center mt-5  bg-white rounded-2xl shadow-lg">
       <tr>
-        <th colspan="2" class="text-center py-4">Rank</th>
-        <th>Username</th>
-        <th>Total games</th>
-        <th>Score</th>
+        <th colspan="2" class="text-center py-4">Vị trí</th>
+        <th>Tên</th>
+        <th>Số trận đã chơi</th>
+        <th>Số điểm</th>
       </tr>
       <tr
         class="border-t-2 border-red-400"
