@@ -18,7 +18,7 @@
         v-show="!room.canJoin"
         class="py-4 px-5 bg-yellow-500 text-white font-bold rounded-full text-xl flex justify-center items-center"
       >
-        Time left: {{ room.questionTimeLeft }}
+        Time left : {{ Math.max(room.questionTimeLeft, 0) }}s
       </div>
 
       <div
@@ -30,7 +30,10 @@
     </div>
     <div class="w-full h-full">
       <PlayerList v-show="room.canJoin" />
-      <Question v-if="room.view == 'question'" />
+      <div v-if="!room.canJoin">
+        <Question v-if="room.view == 'question'" />
+        <Leaderboard v-if="room.view == 'leaderboard'" />
+      </div>
     </div>
   </div>
 </template>
@@ -39,13 +42,13 @@
 // @ is an alias to /src
 import PlayerList from "./PlayerList";
 import Question from "./Question";
-// import Leaderboard from "./leaderboard";
+import Leaderboard from "./leaderboard";
 export default {
   name: "MultiPlay",
   components: {
     PlayerList,
     Question,
-    // Leaderboard,
+    Leaderboard,
   },
   data() {
     return {};

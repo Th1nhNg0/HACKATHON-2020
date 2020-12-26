@@ -1,8 +1,6 @@
 <template>
   <div class="w-full mt-10 text-3xl text-center">
-    <div class="bg-gray-400 rounded-2xl p-10 ">
-      {{ question.question }}
-    </div>
+    <div class="bg-gray-400 rounded-2xl p-10" v-html="question.question"></div>
     <div class="grid grid-cols-2 w-full gap-5 mt-5">
       <div
         @click="answer(0)"
