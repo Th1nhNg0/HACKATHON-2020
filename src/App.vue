@@ -1,9 +1,12 @@
 <template>
   <div class="bg-custom-bg">
-    <router-view />
+    <Forum />
   </div>
 </template>
 <script>
-export default {};
+import Forum from "./views/Forum";
+export default {
+  components: { Forum },
+};
 </script>
 <style></style>
