@@ -4,35 +4,40 @@
     <div>
       <span class="font-bold text-3xl text-white">Luyện tập:</span>
     </div>
-    <div class="flex pt-10 gap-6">
+    <div class="flex pt-5 gap-6">
       <router-link to="/single">
         <div
-          class="h-40 w-40 bg-gray-500 flex items-center justify-center rounded-2xl"
+          class="h-40 w-40 shadow-md bg-gray-500 flex items-center justify-center rounded-2xl"
         >
           <i class="fad fa-plus text-6xl"></i>
         </div>
       </router-link>
 
-      <div class="flex flex-row justify-between gap-6">
+      <div class="flex flex-row justify-between gap-6 ">
         <div v-for="i in 3" :key="i">
           <router-link to="/single">
             <div
-              style="background-image: url('./images/practice-bg.png')"
-              class="h-40 w-64 bg-cover rounded-2xl"
+              :style="{ backgroundImage: `url(./images/${images[i]})` }"
+              class="shadow-md h-40 w-64 bg-cover rounded-2xl flex justify-center items-center hover:scale-105 transition-all duration-200 ease-in-out transform"
             >
-              <span class="font-bold text-xl pl-10 text-white">
-                Luyện thi đại học
+              <span
+                class="font-bold text-xl bg-white bg-opacity-50	 w-full text-center"
+              >
+                Gói câu hỏi {{ i }}
               </span>
             </div>
           </router-link>
         </div>
       </div>
     </div>
-    <div class="w-full pt-20 flex flex-row justify-between gap-4">
-      <div class="w-7/12 bg-gray-400 rounded-2xl">
+    <div class="w-full  pt-10 flex flex-row justify-between gap-4">
+      <div class="w-7/12 bg-gray-400 rounded-2xl shadow-md">
         <Room />
       </div>
-      <div class="w-5/12 h-64 bg-gray-400 rounded-2xl">
+      <div
+        style="height:19rem"
+        class="w-5/12  bg-gray-400 rounded-2xl shadow-md"
+      >
         <Chat />
       </div>
     </div>
@@ -45,6 +50,16 @@ import Chat from "../components/Chat";
 import Room from "../components/Room";
 export default {
   name: "Dashboard",
+  data() {
+    return {
+      images: [
+        "",
+        "maxresdefault.jpg",
+        "10_exam_preparation_tips.webp",
+        "colorful-flat-chemistry-background_23-2148160522.jpg",
+      ],
+    };
+  },
   components: { Navbar, Chat, Room },
 };
 </script>

@@ -1,8 +1,15 @@
 <template>
-  <div class="text-center pt-2">
-    <button @click="createRoom">Create Room</button>
-    <span class="font-bold text-3xl ">Room List</span>
-    <div class="w-full   overflow-hidden rounded-25px text-left">
+  <div class="text-center p-5 ">
+    <div class="flex justify-between px-5">
+      <span class="font-bold text-3xl ">Room List</span>
+      <button
+        @click="createRoom"
+        class="bg-green-500 px-4 py-2 rounded-2xl text-white font-bold"
+      >
+        Create Room
+      </button>
+    </div>
+    <div class="w-full   overflow-hidden rounded-2xl text-left">
       <div class="overflow-auto h-full w-full">
         <div
           class="grid grid-cols-12  font-bold px-5 py-3"
@@ -15,7 +22,7 @@
         <!-- content -->
         <div class="flex flex-col gap-5">
           <div
-            class="grid grid-cols-12 text-sm  bg-gray-500 px-5 py-3 rounded-25px shadow cursor-pointer hover:bg"
+            class="grid grid-cols-12 text-sm  bg-gray-500 px-5 py-3 rounded-2xl shadow cursor-pointer hover:bg"
             style="min-width: 400px"
             v-for="r in rooms"
             :key="r.id"

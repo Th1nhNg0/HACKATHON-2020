@@ -1,25 +1,30 @@
 <template>
-  <div class="min-h-full pl-6 pr-6">
-    <span class="font-bold text-xl pl-4">Chat</span>
-    <ul
-      class="messages pl-5 bg-white h-40 rounded-lg overflow-scroll overscroll-y-auto"
-      v-chat-scroll="{ always: false, smooth: true }"
-    >
-      <li class="message" v-for="(n, index) in messages" :key="index">
-        <strong>{{ n.user }}</strong
-        >: {{ n.message }}
-      </li>
-    </ul>
-    <div class="flex flex-row w-full pt-5">
-      <input
-        @keyup.enter="send"
-        type="text"
-        class="rounded-full w-full"
-        v-model="message"
-      />
-      <button class="bg-green-400 rounded-full px-2" @click="send">
-        Send
-      </button>
+  <div class="h-full p-5 pt-2">
+    <span class="font-bold text-3xl">Chat</span>
+    <div class="flex  flex-col h-full pb-10 ">
+      <ul
+        class="messages p-5 pb-2 bg-white  rounded-2xl overflow-scroll overscroll-y-auto"
+        v-chat-scroll="{ always: false, smooth: false }"
+      >
+        <li class="message" v-for="(n, index) in messages" :key="index">
+          <strong>{{ n.user }}</strong
+          >: {{ n.message }}
+        </li>
+      </ul>
+      <div class="flex flex-row w-full mt-3 ">
+        <input
+          @keyup.enter="send"
+          type="text"
+          class="rounded-full w-full p-2"
+          v-model="message"
+        />
+        <button
+          class="bg-green-400 rounded-full px-4 text-white font-bold -ml-10"
+          @click="send"
+        >
+          Send
+        </button>
+      </div>
     </div>
   </div>
 </template>
