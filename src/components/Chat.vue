@@ -11,7 +11,12 @@
       </li>
     </ul>
     <div class="flex flex-row w-full pt-5">
-      <input type="text" class="rounded-full w-full" v-model="message" />
+      <input
+        @keyup.enter="send"
+        type="text"
+        class="rounded-full w-full"
+        v-model="message"
+      />
       <button class="bg-green-400 rounded-full px-2" @click="send">Send</button>
     </div>
   </div>
@@ -34,10 +39,14 @@ export default {
       });
     });
     messagesCollection.onSnapshot((query) => {
+      query.docChanges().forEach((f) => {
+        if(f.type === "added") {
+          console.log(f)
+        }
+      });
       // query.orderBy("sentAt", "asc");
       this.messages = [];
       query.forEach((q) => {
-        console.log(q.data());
         this.messages.unshift(q.data());
       });
     });
