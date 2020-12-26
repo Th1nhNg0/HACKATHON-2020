@@ -1,12 +1,12 @@
 <template>
   <div id="app" class="min-h-screen bg-custom-bg">
-    <Dashboard />
+    <QuestionPanel />
   </div>
 </template>
 <script>
-import Dashboard from "./views/Dashboard";
+import QuestionPanel from "./components/QuestionPanel";
 export default {
-  components: { Dashboard },
+  components: { QuestionPanel },
 };
 </script>
 <style></style>
