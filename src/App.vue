@@ -1,13 +1,12 @@
 <template>
   <div id="app" class="min-h-screen bg-custom-bg">
-    <Dashboard />
+    <Login />
   </div>
 </template>
 <script>
-import Dashboard from "./views/Dashboard";
+import Login from "./views/Login";
 export default {
-  components: { Dashboard },
+  components: { Login },
 };
 </script>
-<style>
-</style>
+<style></style>
