@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-row justify-between">
     <router-link to="/">
-      <span class="text-3xl text-white">Flying Your Learning</span>
+      <span class="text-3xl text-white">AthenaEdu</span>
     </router-link>
     <div class="flex flex-row gap-6 text-2xl items-center text-white">
       <span>Hi, {{ username }}</span>

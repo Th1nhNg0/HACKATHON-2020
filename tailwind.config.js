@@ -11,6 +11,9 @@ module.exports = {
           bg: "#321E83",
         },
       },
+      fontFamily: {
+        crimson: ["Crimson Pro", "sans-serif"],
+      },
     },
   },
   variants: {},

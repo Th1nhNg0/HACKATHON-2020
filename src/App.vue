@@ -1,9 +1,13 @@
 <template>
   <div class="bg-custom-bg min-h-screen">
-    <router-view />
+    <!-- <router-view /> -->
+    
   </div>
 </template>
 <script>
-export default {};
+import Categories from "./components/Categories";
+export default {
+  components: { Categories },
+};
 </script>
 <style></style>

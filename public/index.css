@@ -10397,6 +10397,10 @@ video {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
+.font-crimson {
+  font-family: Crimson Pro, sans-serif;
+}
+
 .font-hairline {
   font-weight: 100;
 }
@@ -21776,6 +21780,8 @@ video {
           animation: bounce 1s infinite;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap");
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -31586,6 +31592,10 @@ video {
 
   .sm\:font-mono {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .sm\:font-crimson {
+    font-family: Crimson Pro, sans-serif;
   }
 
   .sm\:font-hairline {
@@ -52714,6 +52724,10 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .md\:font-crimson {
+    font-family: Crimson Pro, sans-serif;
+  }
+
   .md\:font-hairline {
     font-weight: 100;
   }
@@ -73838,6 +73852,10 @@ video {
 
   .lg\:font-mono {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .lg\:font-crimson {
+    font-family: Crimson Pro, sans-serif;
   }
 
   .lg\:font-hairline {
@@ -94966,6 +94984,10 @@ video {
     font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
 
+  .xl\:font-crimson {
+    font-family: Crimson Pro, sans-serif;
+  }
+
   .xl\:font-hairline {
     font-weight: 100;
   }
@@ -106279,4 +106301,3 @@ video {
             animation: bounce 1s infinite;
   }
 }
-  

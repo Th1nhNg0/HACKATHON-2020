@@ -15,16 +15,21 @@
         ><strong>Câu hỏi: </strong>{{ question }}</span
       >
     </div>
-    <div class="py-2">
+    <!-- <div class="py-2">
       <span class="font-bold text-2xl pl-2">Đáp án</span>
-    </div>
-    <div class="my-2" v-for="(answer, index) in answers" :key="index">
+    </div> -->
+    <div class="bg-white rounded-full py-2">
+        <span class="pl-6 py-4 text-2xl"
+          ><strong>Câu trả lời: </strong>{{ answer }}</span
+        >
+      </div>
+    <!-- <div class="my-2" v-for="(answer, index) in answers" :key="index">
       <div class="bg-white rounded-full py-2">
         <span class="pl-6 py-4 text-2xl"
           ><strong>Câu trả lời: </strong>{{ answer }}</span
         >
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
