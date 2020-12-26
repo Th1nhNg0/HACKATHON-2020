@@ -112,7 +112,6 @@ export default {
     answer(answer) {
       if (this.ifAnswer) return;
       this.ifAnswer = true;
-      console.log({ A: 0, B: 1, C: 2, D: 3 }[answer]);
       this.colors[{ A: 0, B: 1, C: 2, D: 3 }[answer]] = "#ef4444";
       this.colors[{ A: 0, B: 1, C: 2, D: 3 }[this.question.correctAnswer]] =
         "#10b981";
