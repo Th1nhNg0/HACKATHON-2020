@@ -20,12 +20,40 @@
       >
         <i class="fad fa-plus text-6xl"></i>
       </div>
+      <swiper class="swiper" :options="swiperOption">
+        <swiper-slide>
+          <div style="background-image: url('./images/practice-bg.png')" class="h-40 w-40">
+
+          </div>
+        </swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+      </swiper>
     </div>
   </div>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import "swiper/swiper-bundle.css";
+
 export default {
-  name: "Dshboard",
+  name: "Dashboard",
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  data() {
+    return {
+      swiperOption: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      },
+    };
+  },
 };
 </script>
