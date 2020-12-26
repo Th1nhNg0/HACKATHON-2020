@@ -9,43 +9,13 @@
         type="text"
         placeholder="Search by tags ..."
       />
-      <div class="grid grid-cols-3 grid-rows-2 gap-5 pt-10">
-        <button
-          @click="show"
-          class="bg-white inline-block px-8 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition duration-500 bg-transparent border-2 border-blue-700 rounded-full ripple hover:bg-blue-100 focus:outline-none"
-        >
-          Primary
-        </button>
-        <button
-          @click="show"
-          class="bg-white inline-block px-8 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition duration-500 bg-transparent border-2 border-blue-700 rounded-full ripple hover:bg-blue-100 focus:outline-none"
-        >
-          Primary
-        </button>
-        <button
-          @click="show"
-          class="bg-white inline-block px-8 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition duration-500 bg-transparent border-2 border-blue-700 rounded-full ripple hover:bg-blue-100 focus:outline-none"
-        >
-          Primary
-        </button>
-        <button
-          @click="show"
-          class="bg-white inline-block px-8 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition duration-500 bg-transparent border-2 border-blue-700 rounded-full ripple hover:bg-blue-100 focus:outline-none"
-        >
-          Primary
-        </button>
-        <button
-          @click="show"
-          class="bg-white inline-block px-8 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition duration-500 bg-transparent border-2 border-blue-700 rounded-full ripple hover:bg-blue-100 focus:outline-none"
-        >
-          Primary
-        </button>
-        <button
-          @click="show"
-          class="bg-white inline-block px-8 py-2 text-xs font-medium leading-6 text-center text-blue-700 uppercase transition duration-500 bg-transparent border-2 border-blue-700 rounded-full ripple hover:bg-blue-100 focus:outline-none"
-        >
-          Primary
-        </button>
+      <div class="grid grid-cols-3 grid-rows-3 gap-5 pt-10">
+        <button style="background-image: url('./images/cac.png')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl">TOÁN HỌC</button>
+        <button style="background-image: url('./images/chemistry.jfif')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl bg-center">HÓA HỌC</button>
+        <button style="background-image: url('./images/physics.jpg')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl">VẬT LÍ</button>
+        <button style="background-image: url('./images/history.jpg')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl">LỊCH SỬ</button>
+        <button style="background-image: url('./images/biology.jpg')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl bg-center">SINH HỌC</button>
+        <button style="background-image: url('./images/geo.jpg')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl">ĐỊA LÍ</button>
       </div>
     </div>
   </div>

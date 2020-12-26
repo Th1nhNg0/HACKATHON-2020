@@ -40,11 +40,6 @@ export default {
     };
   },
   mounted() {
-    messagesCollection.get().then((q) => {
-      q.forEach((d) => {
-        this.messages.unshift(d.data());
-      });
-    });
     messagesCollection.onSnapshot((query) => {
       this.messages = [];
       query.forEach((q) => {
