@@ -31,12 +31,12 @@
       </div>
     </div>
     <div class="w-full  pt-10 flex flex-row justify-between gap-4">
-      <div class="w-7/12 bg-gray-400 rounded-2xl shadow-md">
+      <div class="w-7/12 bg-gray-100 rounded-2xl shadow-md">
         <Room />
       </div>
       <div
         style="height:19rem"
-        class="w-5/12  bg-gray-400 rounded-2xl shadow-md"
+        class="w-5/12  bg-gray-100 rounded-2xl shadow-md"
       >
         <Chat />
       </div>

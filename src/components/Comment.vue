@@ -1,24 +1,32 @@
 <template>
   <div>
-    <div>
-      <span class="text-2xl">HÃY ĐỂ LẠI BÌNH LUẬN NHÉ</span>
-      <input
-        @keyup.enter="send"
-        class="h-32 w-full"
-        type="text"
-        v-model="content"
-      />
-      <button @click="send">Bình luận</button>
-    </div>
-    <div v-for="(c, i) in comments" :key="i" class="pt-5">
-      <div class="bg-white p-6 rounded-xl">
+    <h1 class="text-2xl font-bold">Bình luận</h1>
+    <div v-if="comments.length == 0">Không có bình luận nào</div>
+    <div v-else v-for="(c, i) in comments" :key="i" class="pt-5 text-black">
+      <div class=" p-6 rounded-xl" :style="{ backgroundColor: color }">
         <span>
           <strong>{{ c.user }}</strong>
-          {{ new Date(c.createdAt * 1000) }}
+          {{ time(c) }}
         </span>
         <p>{{ c.content }}</p>
       </div>
     </div>
+    <h1 class="text-2xl my-5 font-bold">Để lại bình luận:</h1>
+    <textarea
+      @keyup.enter="send"
+      :style="{ backgroundColor: color }"
+      class="h-32 w-full p-5 rounded-2xl text-black"
+      type="text"
+      v-model="content"
+      cols="30"
+      rows="10"
+    ></textarea>
+    <button
+      @click="send"
+      class="bg-green-500 w-full py-4 mt-5 text-white font-bold text-2xl"
+    >
+      Bình luận
+    </button>
   </div>
 </template>
 <script>
@@ -31,7 +39,7 @@ export default {
       content: "",
     };
   },
-  props: ["id"],
+  props: ["id", "color"],
   mounted() {
     quesCollection
       .doc(this.id)
@@ -45,6 +53,11 @@ export default {
     quesCollection.onSnapshot();
   },
   methods: {
+    time(c) {
+      let date = new Date(c.createdAt);
+
+      return date.toLocaleString();
+    },
     send() {
       let d = {
         content: this.content,

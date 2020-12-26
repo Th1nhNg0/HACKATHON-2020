@@ -1,6 +1,6 @@
 <template>
   <div class="w-full mt-10 text-3xl text-center">
-    <div class="bg-gray-400 rounded-2xl p-10" v-html="question.question"></div>
+    <div class="bg-gray-100 rounded-2xl p-10" v-html="question.question"></div>
     <div class="grid grid-cols-2 w-full gap-5 mt-5">
       <div
         @click="answer(0)"
@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     colors() {
-      let c = ["#e2e8f0", "#e2e8f0", "#e2e8f0", "#e2e8f0"];
+      let c = ["#f7fafc", "#f7fafc", "#f7fafc", "#f7fafc"];
       c[this.choose] = "#AEAEAE";
       if (typeof this.trueAnswer == "number") {
         c[this.choose] = "#EC4F4F";

@@ -4,7 +4,7 @@
       <span class="font-bold text-3xl ">Room List</span>
       <button
         @click="createRoom"
-        class="bg-green-500 px-4 py-2 rounded-2xl text-white font-bold"
+        class="bg-green-500 px-4 py-2 rounded-2xl text-white font-bold shadow-md"
       >
         Create Room
       </button>
@@ -22,7 +22,7 @@
         <!-- content -->
         <div class="flex flex-col gap-5">
           <div
-            class="grid grid-cols-12 text-sm  bg-gray-500 px-5 py-3 rounded-2xl shadow cursor-pointer hover:bg"
+            class="grid grid-cols-12 text-sm  bg-gray-200 px-5 py-3 rounded-2xl shadow-md cursor-pointer hover:bg "
             style="min-width: 400px"
             v-for="r in rooms"
             :key="r.id"

@@ -3,7 +3,7 @@
     <span class="font-bold text-3xl">Chat</span>
     <div class="flex  flex-col h-full pb-10 ">
       <ul
-        class="messages p-5 pb-2 bg-white  rounded-2xl overflow-scroll overscroll-y-auto"
+        class="messages p-5 pb-2 bg-white shadow-md rounded-2xl overflow-scroll overscroll-y-auto"
         v-chat-scroll="{ always: false, smooth: false }"
       >
         <li class="message" v-for="(n, index) in messages" :key="index">
@@ -15,11 +15,11 @@
         <input
           @keyup.enter="send"
           type="text"
-          class="rounded-full w-full p-2"
+          class="rounded-full w-full p-2 shadow-md"
           v-model="message"
         />
         <button
-          class="bg-green-400 rounded-full px-4 text-white font-bold -ml-10"
+          class="bg-green-400 rounded-full px-4 text-white font-bold -ml-10 shadow-md "
           @click="send"
         >
           Send

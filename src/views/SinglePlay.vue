@@ -18,34 +18,34 @@
       </div>
     </div>
     <div class="w-full mt-10 text-3xl text-center">
-      <div class="bg-gray-400 rounded-2xl p-10 ">
+      <div class="bg-gray-100 rounded-2xl p-10 ">
         {{ question.question }}
       </div>
       <div class="grid grid-cols-2 w-full gap-5 mt-5">
         <div
           @click="answer('A')"
-          class=" rounded-2xl p-10 hover:bg-gray-500 cursor-pointer	transition-all ease-in-out duration-300"
+          class=" rounded-2xl p-10 hover:bg-gray-300 cursor-pointer	transition-all ease-in-out duration-300"
           :style="{ background: colors[0] }"
         >
           {{ question.answerA }}
         </div>
         <div
           @click="answer('B')"
-          class="rounded-2xl p-10  hover:bg-gray-500 cursor-pointer		transition-all ease-in-out duration-300"
+          class="rounded-2xl p-10  hover:bg-gray-300 cursor-pointer		transition-all ease-in-out duration-300"
           :style="{ background: colors[1] }"
         >
           {{ question.answerB }}
         </div>
         <div
           @click="answer('C')"
-          class="rounded-2xl p-10  hover:bg-gray-500 cursor-pointer		transition-all ease-in-out duration-300"
+          class="rounded-2xl p-10  hover:bg-gray-300 cursor-pointer		transition-all ease-in-out duration-300"
           :style="{ background: colors[2] }"
         >
           {{ question.answerC }}
         </div>
         <div
           @click="answer('D')"
-          class="rounded-2xl p-10  hover:bg-gray-500 cursor-pointer		transition-all ease-in-out duration-300"
+          class="rounded-2xl p-10  hover:bg-gray-300 cursor-pointer		transition-all ease-in-out duration-300"
           :style="{ background: colors[3] }"
         >
           {{ question.answerD }}
@@ -60,7 +60,7 @@
       </div>
     </div>
     <div v-if="ifAnswer" class="mt-10 ">
-      <h1 class="text-white font-bold text-4xl">Lời giải:</h1>
+      <Comment :id="question.id" class="text-white" color="white" />
     </div>
   </div>
 </template>
@@ -68,22 +68,26 @@
 <script>
 // @ is an alias to /src
 import { quesCollection } from "../firebase";
+import Comment from "../components/Comment";
 export default {
   name: "SinglePlay",
+  components: { Comment },
   data() {
     return {
       questions: [],
       index: 0,
       time: 0,
       ifAnswer: false,
-      colors: ["#e2e8f0", "#e2e8f0", "#e2e8f0", "#e2e8f0"],
+      colors: ["#f7fafc", "#f7fafc", "#f7fafc", "#f7fafc"],
     };
   },
   async mounted() {
     setInterval(() => this.time++, 1000);
     const snapshot = await quesCollection.get();
     snapshot.forEach((doc) => {
-      this.questions.push(doc.data());
+      let data = doc.data();
+      data.id = doc.id;
+      this.questions.push(data);
     });
   },
   computed: {
@@ -107,7 +111,7 @@ export default {
       this.index++;
       if (this.index == this.questions.length) this.index = 0;
       this.ifAnswer = false;
-      this.colors = ["#e2e8f0", "#e2e8f0", "#e2e8f0", "#e2e8f0"];
+      this.colors = ["#f7fafc", "#f7fafc", "#f7fafc", "#f7fafc"];
     },
     answer(answer) {
       if (this.ifAnswer) return;

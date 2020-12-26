@@ -1,30 +1,30 @@
 <template>
-  <div class="bg-gray-400 w-full rounded-2xl pl-4 pr-4 pb-4">
+  <div class="bg-gray-100 w-full rounded-2xl p-10 pt-5">
     <div
       v-if="!chosen"
-      class="flex flex-row justify-between text-xl font-bold pl-4 pr-4 pt-2"
+      class="flex flex-row justify-between text-2xl font-bold pl-4 pr-4 pt-2"
     >
       <span>Câu hỏi</span>
-      <span>Đáp án</span>
     </div>
     <div class="my-2" v-for="(question, index) in questions" :key="index">
       <div
         v-if="!chosen"
-        class="bg-white py-2 rounded-full flex justify-between"
+        class="bg-gray-300 py-3 rounded-full flex justify-between text-xl cursor-pointer"
         @click="chooseQuestion(index)"
       >
         <span class="pl-6">{{ question.question }}</span>
-        <span class="pr-10 font-bold text-xl">{{ question.answers }}</span>
       </div>
     </div>
     <QuestionAnswer
       v-if="chosen"
       @goBack="goBack"
       :question="questions[this.chosenid].question"
-      :answers="questions[this.chosenid].ansArr"
+      :answers="questions[this.chosenid].answers"
+      :correctAnswer="questions[this.chosenid].correctAnswer"
     />
-    <div class="fakthis"></div>
-    <Comment v-if="chosen" :id="questions[this.chosenid].docId" />
+    <div v-if="chosen" class="fakthis"></div>
+
+    <Comment v-if="chosen" :id="questions[this.chosenid].id" color="#e2e8f0" />
   </div>
 </template>
 
@@ -40,22 +40,15 @@ export default {
       chosen: false,
       chosenid: 0,
       questions: [],
-      commentid: 0
+      commentid: 0,
     };
   },
   mounted() {
     quesCollection.get().then((snap) => {
       snap.forEach((doc) => {
-        let docData = doc.data();
-        let data = docData;
-        data["ansArr"] = [
-          docData["answerA"],
-          docData["answerB"],
-          docData["answerC"],
-          docData["answerD"],
-        ];
-        data["answers"] = data["ansArr"].length;
-        data.docId = doc.id;
+        let data = doc.data();
+        data.id = doc.id;
+        data.answers = [data.answerA, data.answerB, data.answerC, data.answerD];
         this.questions.push(data);
       });
     });
