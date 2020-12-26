@@ -7,8 +7,11 @@
       <button class="bg-green-400 font-bold py-2 px-8 rounded-full">
         Forum
       </button>
-      <span>Username</span>
-      <button class="bg-red-400 font-bold py-2 px-8 rounded-full">
+      <span>{{ username }}</span>
+      <button
+        @click="signout"
+        class="bg-red-400 font-bold py-2 px-8 rounded-full"
+      >
         Signout
       </button>
     </div>
@@ -16,7 +19,15 @@
 </template>
 
 <script>
+import { auth } from "../firebase";
+import { mapState } from "vuex";
 export default {
   name: "Navbar",
+  computed: mapState(["username"]),
+  methods: {
+    signout() {
+      auth.signOut().then(() => location.reload());
+    },
+  },
 };
 </script>

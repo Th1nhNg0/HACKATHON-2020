@@ -10,7 +10,7 @@ export default new Vuex.Store({
   },
   mutations: {
     setUserProfile(state, val) {
-      state.username = val;
+      state.username = val ? val : "anonymous";
     },
   },
   actions: {

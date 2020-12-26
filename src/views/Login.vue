@@ -125,9 +125,10 @@ export default {
           this.rpassword
         );
         user.updateProfile({
-          displayName: "Jane Q. User",
+          displayName: this.rusername,
         });
         this.$store.dispatch("fetchUserProfile", user);
+        this.$store.commit("setUserProfile", this.rusername);
       } catch (e) {
         this.errorMessage = e.message;
       }
