@@ -5,7 +5,7 @@
       <span class="font-bold text-3xl text-white">Luyện tập:</span>
     </div>
     <div class="flex pt-5 gap-6">
-      <router-link to="/single">
+      <router-link to="/singleChoose">
         <div
           class="h-40 w-40 shadow-md bg-gray-500 flex items-center justify-center rounded-2xl"
         >

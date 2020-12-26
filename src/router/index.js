@@ -50,6 +50,15 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Login.vue"),
   },
+  {
+    path: "/singleChoose",
+    name: "Categories",
+    meta: {
+      requiresAuth: false,
+    },
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Categories.vue"),
+  },
 ];
 
 const router = new VueRouter({
