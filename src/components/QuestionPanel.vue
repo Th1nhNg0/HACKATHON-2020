@@ -13,14 +13,14 @@
         class="bg-white py-2 rounded-full flex justify-between"
         @click="chooseQuestion(index)"
       >
-        <span class="pl-6">{{ question.title }}</span>
+        <span class="pl-6">{{ question.question }}</span>
         <span class="pr-10 font-bold text-xl">{{ question.answers }}</span>
       </div>
     </div>
     <QuestionAnswer
       v-if="chosen"
       @goBack="goBack"
-      :question="questions[this.chosenid].title"
+      :question="questions[this.chosenid].question"
       :answers="questions[this.chosenid].ansArr"
     />
   </div>
@@ -28,6 +28,7 @@
 
 <script>
 import QuestionAnswer from "./QuestionAnswer";
+import { quesCollection } from "../firebase.js";
 export default {
   name: "QuestionPanel",
   components: { QuestionAnswer },
@@ -35,29 +36,24 @@ export default {
     return {
       chosen: false,
       chosenid: 0,
-      questions: [
-        {
-          title: "This is the title of the question",
-          answers: 4,
-          ansArr: ["hello", "hello", "hello", "hello"],
-        },
-        {
-          title: "This is the title of the question",
-          answers: 4,
-          ansArr: ["hello", "hello", "hello", "hello"],
-        },
-        {
-          title: "This is the title of the question",
-          answers: 4,
-          ansArr: ["hello", "hello", "hello", "hello"],
-        },
-        {
-          title: "This is the title of the question",
-          answers: 4,
-          ansArr: ["hello", "hello", "hello", "hello"],
-        },
-      ],
+      questions: [],
     };
+  },
+  mounted() {
+    quesCollection.get().then((snap) => {
+      snap.forEach((doc) => {
+        let docData = doc.data();
+        let data = docData;
+        data["ansArr"] = [
+          docData["answerA"],
+          docData["answerB"],
+          docData["answerC"],
+          docData["answerD"],
+        ];
+        data["answers"] = data["ansArr"].length;
+        this.questions.push(data);
+      });
+    });
   },
   methods: {
     chooseQuestion(choice) {

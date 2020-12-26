@@ -5,13 +5,18 @@
       class="messages pl-5 bg-white h-40 rounded-lg overflow-scroll overscroll-y-auto"
       v-chat-scroll="{ always: false, smooth: true }"
     >
-      <li class="message" v-for="n in messages" :key="n">
+      <li class="message" v-for="(n, index) in messages" :key="index">
         <strong>{{ n.user }}</strong
         >: {{ n.message }}
       </li>
     </ul>
     <div class="flex flex-row w-full pt-5">
-      <input type="text" class="rounded-full w-full" v-model="message" />
+      <input
+        @keyup.enter="send"
+        type="text"
+        class="rounded-full w-full"
+        v-model="message"
+      />
       <button class="bg-green-400 rounded-full px-2" @click="send">Send</button>
     </div>
   </div>
@@ -34,17 +39,16 @@ export default {
       });
     });
     messagesCollection.onSnapshot((query) => {
-      // query.orderBy("sentAt", "asc");
       this.messages = [];
       query.forEach((q) => {
-        console.log(q.data());
         this.messages.unshift(q.data());
       });
-      this.messages.sort((a, b) => a.sendAt - b.sendAt);
+      // this.messages = this.messages.sort((a, b) => a.sendAt - b.sendAt);
     });
   },
   methods: {
     send() {
+      if (this.message === "") return;
       messagesCollection.add({
         message: this.message,
         user: this.$store.state.username,
