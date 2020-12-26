@@ -7,7 +7,7 @@
     <div class="flex pt-10 gap-6">
       <router-link to="/single">
         <div
-          class="h-40 w-40 bg-gray-500 flex items-center justify-center rounded-lg"
+          class="h-40 w-40 bg-gray-500 flex items-center justify-center rounded-2xl"
         >
           <i class="fad fa-plus text-6xl"></i>
         </div>
@@ -18,7 +18,7 @@
           <router-link to="/single">
             <div
               style="background-image: url('./images/practice-bg.png')"
-              class="h-40 w-64 bg-cover rounded-3xl"
+              class="h-40 w-64 bg-cover rounded-2xl bg-cover"
             >
               <span class="font-bold text-xl pl-10 text-white">
                 Luyện thi đại học
@@ -29,10 +29,10 @@
       </div>
     </div>
     <div class="w-full pt-20 flex flex-row justify-between gap-4">
-      <div class="w-7/12 bg-gray-400 rounded-lg">
-        <span class="font-bold text-xl pl-2">Rooms</span>
+      <div class="w-7/12 bg-gray-400 rounded-2xl">
+        <Room />
       </div>
-      <div class="w-5/12 h-64 bg-gray-400 rounded-lg">
+      <div class="w-5/12 h-64 bg-gray-400 rounded-2xl">
         <Chat />
       </div>
     </div>
@@ -42,8 +42,9 @@
 <script>
 import Navbar from "../components/Navbar";
 import Chat from "../components/Chat";
+import Room from "../components/Room";
 export default {
   name: "Dashboard",
-  components: { Navbar, Chat },
+  components: { Navbar, Chat, Room },
 };
 </script>
