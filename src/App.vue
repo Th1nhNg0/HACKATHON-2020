@@ -1,15 +1,14 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>|
-      <router-link to="/login">Login</router-link>|
-      <router-link to="/dashboard">Dasboard</router-link>
-    </div>
-    <router-view />
+    <Dashboard />
   </div>
 </template>
-
+<script>
+import Dashboard from "./views/Dashboard";
+export default {
+  components: { Dashboard },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
