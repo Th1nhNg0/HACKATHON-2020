@@ -59,6 +59,7 @@ export default {
       return date.toLocaleString();
     },
     send() {
+      if (this.content === "") return;
       let d = {
         content: this.content,
         user: this.$store.state.username,

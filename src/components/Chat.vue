@@ -1,7 +1,7 @@
 <template>
   <div class="h-full p-5 pt-2">
     <span class="font-bold text-3xl">Chat</span>
-    <div class="flex  flex-col h-full pb-10 ">
+    <div class="flex flex-col h-full pb-10">
       <ul
         class="messages p-5 pb-2 bg-white shadow-md rounded-2xl overflow-scroll overscroll-y-auto"
         v-chat-scroll="{ always: false, smooth: false }"
@@ -11,7 +11,7 @@
           >: {{ n.message }}
         </li>
       </ul>
-      <div class="flex flex-row w-full mt-3 ">
+      <div class="flex flex-row w-full mt-3">
         <input
           @keyup.enter="send"
           type="text"
@@ -50,7 +50,7 @@ export default {
       query.forEach((q) => {
         this.messages.unshift(q.data());
       });
-      // this.messages = this.messages.sort((a, b) => a.sendAt - b.sendAt);
+      this.messages = this.messages.sort((a, b) => a.sendAt - b.sendAt);
     });
   },
   methods: {
