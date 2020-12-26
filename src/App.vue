@@ -1,12 +1,9 @@
 <template>
-  <div id="app" class="min-h-screen bg-custom-bg">
-    <Login />
+  <div class="bg-custom-bg">
+    <router-view />
   </div>
 </template>
 <script>
-import Login from "./views/Login";
-export default {
-  components: { Login },
-};
+export default {};
 </script>
 <style></style>

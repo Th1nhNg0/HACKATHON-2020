@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Dashboard from "../views/Dashboard.vue";
 import { auth } from "../firebase";
 
 Vue.use(VueRouter);
@@ -8,17 +8,20 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "Dashboard",
+    component: Dashboard,
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
-    path: "/about",
-    name: "About",
+    path: "/single",
+    name: "Single",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+      import(/* webpackChunkName: "about" */ "../views/SinglePlay.vue"),
   },
   {
     path: "/login",
@@ -28,15 +31,6 @@ const routes = [
     },
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/Login.vue"),
-  },
-  {
-    path: "/dashboard",
-    name: "Dashboard",
-    meta: {
-      requiresAuth: true,
-    },
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Dashboard.vue"),
   },
 ];
 
