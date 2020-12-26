@@ -6,6 +6,7 @@
     >
       <div
         v-for="p in room.players.slice().reverse()"
+        class="transition-all duration-500 ease-in-out"
         :key="p.id"
         :style="{ color: p.ready ? '#35BC52' : 'white' }"
       >
