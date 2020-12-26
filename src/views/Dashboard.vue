@@ -58,7 +58,7 @@
     </div>
     <div class="w-full">
       <div class="w-8/12">
-        <span></span>
+        <span class="font-bold text-xl">Rooms</span>
       </div>
       <div class="w-4/12"></div>
     </div>
