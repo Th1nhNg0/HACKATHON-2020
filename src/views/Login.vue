@@ -2,6 +2,14 @@
   <div
     class="w-screen h-screen flex flex-col gap-5 justify-center items-center"
   >
+    <div class="my-10">
+      <h1 class="text-6xl font-bold text-white text-center">
+        <span style="color:#fbc124">Athena</span>Edu
+      </h1>
+      <p class="text-white text-3xl leading-3 text-center">
+        Flying your learning
+      </p>
+    </div>
     <div
       v-show="errorMessage != ''"
       class="p-10 bg-red-200 font-bold  rounded-xl"

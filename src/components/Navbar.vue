@@ -1,10 +1,12 @@
 <template>
   <div class="flex flex-row justify-between pb-10">
     <router-link to="/">
-      <span class="text-4xl font-bold text-white"
-        ><span style="color:#fbc124">Athena</span>Edu</span
-      >
-      <p class="text-white text-xl leading-3">Flying your learning</p>
+      <h1 class="text-4xl font-bold text-white">
+        <span style="color:#fbc124">Athena</span>Edu
+      </h1>
+      <p class="text-white text-xl leading-3 text-center">
+        Flying your learning
+      </p>
     </router-link>
     <div class="flex flex-row gap-6 text-2xl items-center text-white">
       <span>Hi, {{ username }}</span>
