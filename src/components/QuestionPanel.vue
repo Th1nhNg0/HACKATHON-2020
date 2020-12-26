@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-400 h-64 w-full rounded-xl pl-4 pr-4">
+  <div class="bg-gray-400 w-full rounded-2xl pl-4 pr-4 pb-4">
     <div
       v-if="!chosen"
       class="flex flex-row justify-between text-xl font-bold pl-4 pr-4 pt-2"
