@@ -11,10 +11,13 @@
       </li>
     </ul>
     <div class="flex flex-row w-full pt-5">
-      <input @keyup.enter="send" type="text" class="rounded-full w-full" v-model="message" />
-      <button class="bg-green-400 rounded-full px-2" @click="send">
-        Send
-      </button>
+      <input
+        @keyup.enter="send"
+        type="text"
+        class="rounded-full w-full"
+        v-model="message"
+      />
+      <button class="bg-green-400 rounded-full px-2" @click="send">Send</button>
     </div>
   </div>
 </template>
@@ -45,7 +48,7 @@ export default {
   },
   methods: {
     send() {
-      if (message === "") return;
+      if (this.message === "") return;
       messagesCollection.add({
         message: this.message,
         user: this.$store.state.username,
