@@ -42,7 +42,6 @@ export default {
     messagesCollection.onSnapshot((query) => {
       this.messages = [];
       query.forEach((q) => {
-        console.log(q.data());
         this.messages.unshift(q.data());
       });
       // this.messages = this.messages.sort((a, b) => a.sendAt - b.sendAt);
