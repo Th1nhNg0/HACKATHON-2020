@@ -51,6 +51,15 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/Login.vue"),
   },
   {
+    path: "/rank",
+    name: "Rank",
+    meta: {
+      requiresAuth: false,
+    },
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Ranking.vue"),
+  },
+  {
     path: "/singleChoose",
     name: "Categories",
     meta: {

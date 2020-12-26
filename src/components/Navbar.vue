@@ -15,6 +15,11 @@
         to="questions"
         >Forum</router-link
       >
+      <router-link
+        class="bg-yellow-600 font-bold py-2 px-8 rounded-full shadow-md"
+        to="rank"
+        >Rank</router-link
+      >
       <button
         @click="signout"
         class="bg-red-400 font-bold py-2 px-8 rounded-full shadow-md"

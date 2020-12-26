@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto pt-5">
+  <div class="container mx-auto pt-10">
     <Navbar />
     <div class="w-full text-center mb-10">
       <h1 class="font-bold text-4xl text-white">Diễn đàn</h1>
