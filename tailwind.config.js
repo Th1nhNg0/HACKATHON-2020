@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         custom: {
-          bg: "321E83",
+          bg: "#321E83",
         },
       },
     },
