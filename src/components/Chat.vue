@@ -15,6 +15,7 @@
         <input
           @keyup.enter="send"
           type="text"
+          placeholder="Nhập tin nhắn ..."
           class="rounded-full w-full p-2 shadow-md"
           v-model="message"
         />
@@ -22,7 +23,7 @@
           class="bg-green-400 rounded-full px-4 text-white font-bold -ml-10 shadow-md "
           @click="send"
         >
-          Send
+          Gửi
         </button>
       </div>
     </div>
