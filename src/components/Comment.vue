@@ -14,7 +14,7 @@
       <div class="bg-white p-6 rounded-xl">
         <span>
           <strong>{{ c.user }}</strong>
-          {{ new Date(c.createdAt * 1000) }}
+          {{ new Date(c.createdAt).toLocaleString() }}
         </span>
         <p>{{ c.content }}</p>
       </div>
@@ -46,6 +46,7 @@ export default {
   },
   methods: {
     send() {
+      if (this.content === "") return;
       let d = {
         content: this.content,
         user: this.$store.state.username,
