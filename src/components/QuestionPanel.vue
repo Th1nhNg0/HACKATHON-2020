@@ -1,30 +1,32 @@
 <template>
   <div class="bg-gray-100 w-full rounded-2xl p-10 pt-5">
-    <div
-      v-if="!chosen"
-      class="flex flex-row justify-between text-2xl font-bold pl-4 pr-4 pt-2"
-    >
-      <span>Câu hỏi</span>
-    </div>
-    <div class="my-5 " v-for="(question, index) in questions" :key="index">
-      <div
-        v-if="!chosen"
-        class="bg-gray-300 py-3 rounded-full flex justify-between text-xl cursor-pointer shadow-md"
-        @click="chooseQuestion(index)"
-      >
-        <span class="pl-6">{{ question.question }}</span>
+    <transition name="slide-fade" mode="out-in">
+      <div v-if="!chosen" key="ques">
+        <div
+          class="flex flex-row justify-between text-2xl font-bold pl-4 pr-4 pt-2"
+        >
+          <span>Câu hỏi</span>
+        </div>
+        <div class="my-5 " v-for="(question, index) in questions" :key="index">
+          <div
+            class="bg-gray-300 py-3 rounded-full flex justify-between text-xl cursor-pointer shadow-md"
+            @click="chooseQuestion(index)"
+          >
+            <span class="pl-6">{{ question.question }}</span>
+          </div>
+        </div>
       </div>
-    </div>
-    <QuestionAnswer
-      v-if="chosen"
-      @goBack="goBack"
-      :question="questions[this.chosenid].question"
-      :answers="questions[this.chosenid].answers"
-      :correctAnswer="questions[this.chosenid].correctAnswer"
-    />
-    <div v-if="chosen" class="fakthis"></div>
-
-    <Comment v-if="chosen" :id="questions[this.chosenid].id" color="#e2e8f0" />
+      <div v-else key="detail">
+        <QuestionAnswer
+          @goBack="goBack"
+          :question="questions[this.chosenid].question"
+          :answers="questions[this.chosenid].answers"
+          :correctAnswer="questions[this.chosenid].correctAnswer"
+        />
+        <div class="fakthis"></div>
+        <Comment :id="questions[this.chosenid].id" color="#e2e8f0" />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -69,5 +71,14 @@ export default {
   border-top: 1px solid gray;
   margin-top: 1.125rem;
   margin-bottom: 1.125rem;
+}
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateY(100px);
+  opacity: 0;
 }
 </style>

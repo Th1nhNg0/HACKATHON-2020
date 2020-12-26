@@ -24,28 +24,28 @@
       <div class="grid grid-cols-2 w-full gap-5 mt-5">
         <div
           @click="answer('A')"
-          class=" rounded-2xl p-10 hover:bg-gray-300 cursor-pointer	transition-all ease-in-out duration-300"
+          class=" rounded-2xl p-10 hover:bg-gray-300 cursor-pointer	transition-all ease-in-out duration-300 hover:scale-105 transform"
           :style="{ background: colors[0] }"
         >
           {{ question.answerA }}
         </div>
         <div
           @click="answer('B')"
-          class="rounded-2xl p-10  hover:bg-gray-300 cursor-pointer		transition-all ease-in-out duration-300"
+          class="rounded-2xl p-10  hover:bg-gray-300 cursor-pointer		transition-all ease-in-out duration-300 hover:scale-105 transform"
           :style="{ background: colors[1] }"
         >
           {{ question.answerB }}
         </div>
         <div
           @click="answer('C')"
-          class="rounded-2xl p-10  hover:bg-gray-300 cursor-pointer		transition-all ease-in-out duration-300"
+          class="rounded-2xl p-10  hover:bg-gray-300 cursor-pointer		transition-all ease-in-out duration-300 hover:scale-105 transform"
           :style="{ background: colors[2] }"
         >
           {{ question.answerC }}
         </div>
         <div
           @click="answer('D')"
-          class="rounded-2xl p-10  hover:bg-gray-300 cursor-pointer		transition-all ease-in-out duration-300"
+          class="rounded-2xl p-10  hover:bg-gray-300 cursor-pointer		transition-all ease-in-out duration-300 hover:scale-105 transform"
           :style="{ background: colors[3] }"
         >
           {{ question.answerD }}

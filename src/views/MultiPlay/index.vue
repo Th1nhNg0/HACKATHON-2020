@@ -30,10 +30,9 @@
     </div>
     <div class="w-full h-full">
       <PlayerList v-show="room.canJoin" />
-      <div v-if="!room.canJoin">
-        <Question v-if="room.view == 'question'" />
-        <Leaderboard v-if="room.view == 'leaderboard'" />
-      </div>
+      <transition v-if="!room.canJoin" tag="div" name="fade" mode="out-in">
+        <component v-bind:is="room.view"></component>
+      </transition>
     </div>
   </div>
 </template>
@@ -47,8 +46,8 @@ export default {
   name: "MultiPlay",
   components: {
     PlayerList,
-    Question,
-    Leaderboard,
+    question: Question,
+    leaderboard: Leaderboard,
   },
   data() {
     return {};
