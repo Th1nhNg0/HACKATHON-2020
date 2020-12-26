@@ -1,12 +1,12 @@
 <template>
   <div id="app" class="min-h-screen bg-custom-bg">
-    <Login />
+    <Forum />
   </div>
 </template>
 <script>
-import Login from "./views/Login";
+import Forum from "./views/Forum";
 export default {
-  components: { Login },
+  components: { Forum },
 };
 </script>
 <style></style>
