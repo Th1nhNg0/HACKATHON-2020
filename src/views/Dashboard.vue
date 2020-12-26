@@ -32,8 +32,8 @@
       <div class="w-7/12 bg-gray-400 rounded-lg">
         <span class="font-bold text-xl pl-2">Rooms</span>
       </div>
-      <div class="w-5/12 bg-gray-400 rounded-lg">
-        <span class="font-bold text-xl pl-2"><Chat /></span>
+      <div class="w-5/12 h-64 bg-gray-400 rounded-lg">
+        <Chat />
       </div>
     </div>
   </div>
