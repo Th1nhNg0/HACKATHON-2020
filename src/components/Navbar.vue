@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-row justify-between pb-10">
     <router-link to="/">
-      <h1 class="text-4xl font-bold text-white">
+      <h1 class="text-4xl font-bold text-white ">
         <span style="color:#fbc124">Athena</span>Edu
       </h1>
       <p class="text-white text-xl leading-3 text-center">
@@ -11,13 +11,13 @@
     <div class="flex flex-row gap-6 text-2xl items-center text-white">
       <span>Hi, {{ username }}</span>
       <router-link
-        class="bg-green-400 font-bold py-2 px-8 rounded-full"
+        class="bg-green-400 font-bold py-2 px-8 rounded-full shadow-md"
         to="questions"
         >Forum</router-link
       >
       <button
         @click="signout"
-        class="bg-red-400 font-bold py-2 px-8 rounded-full"
+        class="bg-red-400 font-bold py-2 px-8 rounded-full shadow-md"
       >
         Signout
       </button>

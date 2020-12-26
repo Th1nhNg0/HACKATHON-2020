@@ -2,8 +2,11 @@
   <div>
     <h1 class="text-2xl font-bold">Bình luận</h1>
     <div v-if="comments.length == 0">Không có bình luận nào</div>
-    <div v-else v-for="(c, i) in comments" :key="i" class="pt-5 text-black">
-      <div class=" p-6 rounded-xl" :style="{ backgroundColor: color }">
+    <div v-else v-for="(c, i) in comments" :key="i" class="pt-5 text-black ">
+      <div
+        class=" p-6 rounded-xl shadow-md"
+        :style="{ backgroundColor: color }"
+      >
         <span>
           <strong>{{ c.user }}</strong>
           {{ time(c) }}
@@ -23,7 +26,7 @@
     ></textarea>
     <button
       @click="send"
-      class="bg-green-500 w-full py-4 mt-5 text-white font-bold text-2xl"
+      class="bg-green-500 w-full py-4 mt-5 text-white font-bold text-2xl rounded-2xl shadow-md"
     >
       Bình luận
     </button>

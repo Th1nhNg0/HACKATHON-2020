@@ -14,7 +14,7 @@
       </router-link>
 
       <div class="flex flex-row justify-between gap-6 ">
-        <div v-for="i in 3" :key="i">
+        <div v-for="i in 4" :key="i">
           <router-link to="/single">
             <div
               :style="{ backgroundImage: `url(./images/${images[i]})` }"
@@ -57,6 +57,7 @@ export default {
         "maxresdefault.jpg",
         "10_exam_preparation_tips.webp",
         "colorful-flat-chemistry-background_23-2148160522.jpg",
+        "Free-Best-HD-Nature-Wallpapers.jpg",
       ],
     };
   },

@@ -6,10 +6,10 @@
     >
       <span>Câu hỏi</span>
     </div>
-    <div class="my-2" v-for="(question, index) in questions" :key="index">
+    <div class="my-5 " v-for="(question, index) in questions" :key="index">
       <div
         v-if="!chosen"
-        class="bg-gray-300 py-3 rounded-full flex justify-between text-xl cursor-pointer"
+        class="bg-gray-300 py-3 rounded-full flex justify-between text-xl cursor-pointer shadow-md"
         @click="chooseQuestion(index)"
       >
         <span class="pl-6">{{ question.question }}</span>

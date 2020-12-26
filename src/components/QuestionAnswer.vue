@@ -7,15 +7,15 @@
         Back
       </button>
     </div>
-    <div class="bg-gray-300 rounded-full py-4 ">
+    <div class="bg-gray-300 rounded-full py-4 shadow-md ">
       <span class="pl-6 text-2xl"
         ><strong>Câu hỏi: </strong>{{ question }}</span
       >
     </div>
-    <div class=" grid grid-cols-2 gap-5 mt-5">
+    <div class=" grid grid-cols-2 gap-5 mt-5 ">
       <div v-for="(answer, index) in answers" :key="index">
         <div
-          class="bg-gray-300 rounded-full text-center  p-4"
+          class="bg-gray-300 rounded-full text-center  p-4 shadow-md"
           :style="{ backgroundColor: colors[index] }"
         >
           <span>{{ answer }}</span>
