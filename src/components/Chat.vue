@@ -5,7 +5,7 @@
       class="messages pl-5 bg-white h-40 rounded-lg overflow-scroll overscroll-y-auto"
       v-chat-scroll="{ always: false, smooth: true }"
     >
-      <li class="message" v-for="n in messages" :key="n">
+      <li class="message" v-for="(n, index) in messages" :key="index">
         <strong>{{ n.user }}</strong
         >: {{ n.message }}
       </li>
