@@ -11,13 +11,14 @@
       </li>
     </ul>
     <div class="flex flex-row w-full pt-5">
-      <input
-        @keyup.enter="send"
-        type="text"
-        class="rounded-full w-full"
-        v-model="message"
-      />
-      <button class="bg-green-400 rounded-full px-2" @click="send">Send</button>
+      <input type="text" class="rounded-full w-full" v-model="message" />
+      <button
+        class="bg-green-400 rounded-full px-2"
+        @click="send"
+        :disabled="message == ''"
+      >
+        Send
+      </button>
     </div>
   </div>
 </template>
@@ -39,17 +40,11 @@ export default {
       });
     });
     messagesCollection.onSnapshot((query) => {
-      query.docChanges().forEach((f) => {
-        if(f.type === "added") {
-          console.log(f)
-        }
-      });
-      // query.orderBy("sentAt", "asc");
       this.messages = [];
       query.forEach((q) => {
         this.messages.unshift(q.data());
       });
-      this.messages.sort((a, b) => a.sendAt - b.sendAt);
+      // this.messages = this.messages.sort((a, b) => a.sendAt - b.sendAt);
     });
   },
   methods: {
