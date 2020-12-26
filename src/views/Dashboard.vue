@@ -18,7 +18,7 @@
           <router-link to="/single">
             <div
               style="background-image: url('./images/practice-bg.png')"
-              class="h-40 w-64 bg-cover rounded-2xl bg-cover"
+              class="h-40 w-64 bg-cover rounded-2xl"
             >
               <span class="font-bold text-xl pl-10 text-white">
                 Luyện thi đại học

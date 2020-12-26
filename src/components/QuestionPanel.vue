@@ -23,20 +23,24 @@
       :question="questions[this.chosenid].question"
       :answers="questions[this.chosenid].ansArr"
     />
+    <div class="fakthis"></div>
+    <Comment v-if="chosen" :id="questions[this.chosenid].docId" />
   </div>
 </template>
 
 <script>
 import QuestionAnswer from "./QuestionAnswer";
+import Comment from "./Comment";
 import { quesCollection } from "../firebase.js";
 export default {
   name: "QuestionPanel",
-  components: { QuestionAnswer },
+  components: { QuestionAnswer, Comment },
   data() {
     return {
       chosen: false,
       chosenid: 0,
       questions: [],
+      commentid: 0
     };
   },
   mounted() {
@@ -51,6 +55,7 @@ export default {
           docData["answerD"],
         ];
         data["answers"] = data["ansArr"].length;
+        data.docId = doc.id;
         this.questions.push(data);
       });
     });
@@ -66,3 +71,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+.fakthis {
+  border-top: 1px solid gray;
+  margin-top: 1.125rem;
+  margin-bottom: 1.125rem;
+}
+</style>
