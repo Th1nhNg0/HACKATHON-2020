@@ -28,7 +28,7 @@
         <span class="font-bold text-xl pl-2">Rooms</span>
       </div>
       <div class="w-5/12 bg-gray-400 rounded-lg">
-        <span class="font-bold text-xl pl-2">Chat</span>
+        <span class="font-bold text-xl pl-2"><Chat /></span>
       </div>
     </div>
   </div>
@@ -36,8 +36,9 @@
 
 <script>
 import Navbar from "../components/Navbar";
+import Chat from "../components/Chat";
 export default {
   name: "Dashboard",
-  components: { Navbar },
+  components: { Navbar, Chat },
 };
 </script>

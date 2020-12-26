@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-custom-bg">
-    <Forum />
+  <div id="app" class="min-h-screen bg-custom-bg">
+    <Dashboard />
   </div>
 </template>
 <script>
-import Forum from "./views/Forum";
+import Dashboard from "./views/Dashboard";
 export default {
-  components: { Forum },
+  components: { Dashboard },
 };
 </script>
 <style></style>
