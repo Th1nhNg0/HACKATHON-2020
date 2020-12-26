@@ -2,7 +2,7 @@
   <div class="min-h-full pl-6 pr-6">
     <span class="font-bold text-xl pl-4">Chat</span>
     <ul
-      class="messages pl-5 bg-white h-40 rounded-lg"
+      class="messages pl-5 bg-white h-40 rounded-lg overflow-scroll overscroll-y-auto"
       v-chat-scroll="{ always: false, smooth: true }"
     >
       <li class="message" v-for="n in messages" :key="n">
@@ -24,20 +24,21 @@ export default {
   data() {
     return {
       message: "",
-      messages: [
-        {
-          message: "asdasd",
-          user: "WR",
-        },
-      ],
+      messages: [],
     };
   },
   mounted() {
+    messagesCollection.get().then((q) => {
+      q.forEach((d) => {
+        this.messages.unshift(d.data());
+      });
+    });
     messagesCollection.onSnapshot((query) => {
+      // query.orderBy("sentAt", "asc");
       this.messages = [];
       query.forEach((q) => {
         console.log(q.data());
-        this.messages.push(q.data());
+        this.messages.unshift(q.data());
       });
     });
   },
@@ -54,7 +55,11 @@ export default {
 };
 </script>
 <style scoped>
-/* .message li {
-    background-color: transparent !important;
-  } */
+.messages::-webkit-scrollbar {
+  display: none;
+}
+.messages {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 </style>
