@@ -30,7 +30,7 @@
     </div>
     <div class="w-full h-full">
       <PlayerList v-show="room.canJoin" />
-      <transition v-if="!room.canJoin" tag="div" name="fade" mode="out-in">
+      <transition v-if="!room.canJoin" tag="div" name="fadeslide" mode="out-in">
         <component v-bind:is="room.view"></component>
       </transition>
     </div>
@@ -77,14 +77,14 @@ export default {
 };
 </script>
 <style>
-.fade-enter-active {
+.fadeslide-enter-active {
   transition: all 0.5s ease-in-out;
 }
-.fade-enter {
+.fadeslide-enter {
   opacity: 0;
   transform: translateY(60px);
 }
-.fade-leave-active {
+.fadeslide-leave-active {
   transition: all 0.5s ease-in-out;
   opacity: 0;
   transform: translateY(60px);
