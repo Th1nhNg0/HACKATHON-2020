@@ -49,6 +49,7 @@ export default {
       query.forEach((q) => {
         this.messages.unshift(q.data());
       });
+      this.messages.sort((a, b) => a.sendAt - b.sendAt);
     });
   },
   methods: {
