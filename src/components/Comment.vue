@@ -58,6 +58,7 @@ export default {
         .then(() => {
           this.comments.unshift(d);
         });
+      this.content = "";
     },
   },
 };
