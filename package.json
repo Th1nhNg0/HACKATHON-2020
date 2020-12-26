@@ -9,11 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-<<<<<<< HEAD
     "firebase": "^8.2.1",
-=======
-    "swiper": "^6.4.5",
->>>>>>> e65bcc35876f3e80d67447b14d9d6452aa342660
     "tailwindcss": "^1.9.6",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",

@@ -2,7 +2,7 @@
   <div class="w-screen h-screen">
     <!-- nav -->
     <div>
-      <button type="submit"></button>
+      <button @click="back"></button>
     </div>
   </div>
 </template>
@@ -12,5 +12,9 @@
 
 export default {
   name: "SinglePlay",
+  methods:{
+      back(){
+      }
+  }
 };
 </script>
