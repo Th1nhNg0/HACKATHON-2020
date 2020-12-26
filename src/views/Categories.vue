@@ -9,13 +9,49 @@
         type="text"
         placeholder="Search by tags ..."
       />
-      <div class="grid grid-cols-3 grid-rows-3 gap-5 pt-10">
-        <button style="background-image: url('./images/cac.png')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl">TOÁN HỌC</button>
-        <button style="background-image: url('./images/chemistry.jfif')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl bg-center">HÓA HỌC</button>
-        <button style="background-image: url('./images/physics.jpg')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl">VẬT LÍ</button>
-        <button style="background-image: url('./images/history.jpg')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl">LỊCH SỬ</button>
-        <button style="background-image: url('./images/biology.jpg')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl bg-center">SINH HỌC</button>
-        <button style="background-image: url('./images/geo.jpg')" class="font-bold text-2xl text-white py-5 px-10 rounded-3xl">ĐỊA LÍ</button>
+      <div class="grid grid-cols-3 gap-5 pt-10 w-full">
+        <div
+          @click="show"
+          style="background-image: url('./images/Free-Best-HD-Nature-Wallpapers.jpg')"
+          class="font-bold text-2xl text-white  h-40 rounded-2xl bg-cover flex justify-center items-center cursor-pointer"
+        >
+          TỔNG HỢP
+        </div>
+        <div
+          @click="show"
+          style="background-image: url('./images/chemistry.jfif')"
+          class="font-bold text-2xl text-white  h-40 rounded-2xl bg-cover flex justify-center items-center cursor-pointer"
+        >
+          HÓA HỌC
+        </div>
+        <div
+          @click="show"
+          style="background-image: url('./images/physics.jpg')"
+          class="font-bold text-2xl text-white  h-40 rounded-2xl bg-cover flex justify-center items-center cursor-pointer"
+        >
+          VẬT LÍ
+        </div>
+        <div
+          @click="show"
+          style="background-image: url('./images/history.jpg')"
+          class="font-bold text-2xl text-white  h-40 rounded-2xl bg-cover flex justify-center items-center cursor-pointer"
+        >
+          LỊCH SỬ
+        </div>
+        <div
+          @click="show"
+          style="background-image: url('./images/biology.jpg')"
+          class="font-bold text-2xl text-white  h-40 rounded-2xl bg-cover flex justify-center items-center cursor-pointer"
+        >
+          SINH HỌC
+        </div>
+        <div
+          @click="show"
+          style="background-image: url('./images/geo.jpg')"
+          class="font-bold text-2xl text-white  h-40 rounded-2xl bg-cover flex justify-center items-center cursor-pointer"
+        >
+          ĐỊA LÍ
+        </div>
       </div>
     </div>
   </div>
