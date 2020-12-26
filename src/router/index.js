@@ -15,6 +15,15 @@ const routes = [
     },
   },
   {
+    path: "/questions",
+    name: "Questions",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/Forum.vue"),
+    meta: {
+      requiresAuth: true,
+    },
+  },
+  {
     path: "/single",
     name: "Single",
     // route level code-splitting

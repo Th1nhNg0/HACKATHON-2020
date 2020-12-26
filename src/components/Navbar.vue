@@ -1,13 +1,15 @@
 <template>
   <div class="flex flex-row justify-between">
-    <div>
+    <router-link to="/">
       <span class="text-3xl text-white">Gallifrey Training</span>
-    </div>
+    </router-link>
     <div class="flex flex-row gap-6 text-2xl items-center text-white">
-      <button class="bg-green-400 font-bold py-2 px-8 rounded-full">
-        Forum
-      </button>
-      <span>{{ username }}</span>
+      <span>Hi, {{ username }}</span>
+      <router-link
+        class="bg-green-400 font-bold py-2 px-8 rounded-full"
+        to="questions"
+        >Forum</router-link
+      >
       <button
         @click="signout"
         class="bg-red-400 font-bold py-2 px-8 rounded-full"

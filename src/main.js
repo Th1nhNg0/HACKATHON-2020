@@ -3,10 +3,24 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { auth } from "./firebase";
+import VueSocketIO from "vue-socket.io";
+
 /* Chat Scroll */
 import VueChatScroll from "vue-chat-scroll";
 Vue.use(VueChatScroll);
 Vue.config.productionTip = false;
+Vue.use(
+  new VueSocketIO({
+    // debug: true,
+    debug: false,
+    connection: "thinh-project-x-backend.herokuapp.com",
+    vuex: {
+      store,
+      actionPrefix: "SOCKET_",
+      mutationPrefix: "SOCKET_",
+    },
+  })
+);
 
 let app;
 auth.onAuthStateChanged((user) => {
