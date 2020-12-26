@@ -11,9 +11,10 @@ Vue.use(VueChatScroll);
 Vue.config.productionTip = false;
 Vue.use(
   new VueSocketIO({
-    debug: true,
-    // debug: false,
-    connection: "thinh-project-x-backend.herokuapp.com",
+    // debug: true,
+    debug: false,
+    // connection: "thinh-project-x-backend.herokuapp.com",
+    connection: "172.16.29.186:3000",
     vuex: {
       store,
       actionPrefix: "SOCKET_",
