@@ -9,16 +9,28 @@
       >
         <i class="fas fa-chevron-left fa-2x text-white"></i>
       </button>
-      <div class="flex gap-5">
-        <div
-          class="py-4 px-5 bg-blue-500 text-white font-bold rounded-full text-xl flex justify-center items-center"
-        >
-          {{ room.players.length }} <i class="fas fa-user ml-3"></i>
-        </div>
+      <div
+        class="py-4 px-5 bg-blue-500 text-white font-bold rounded-full text-xl flex justify-center items-center"
+      >
+        {{ room.players.length }} <i class="fas fa-user ml-3"></i>
+      </div>
+      <div
+        v-show="!room.canJoin"
+        class="py-4 px-5 bg-yellow-500 text-white font-bold rounded-full text-xl flex justify-center items-center"
+      >
+        Time left: {{ room.questionTimeLeft }}
+      </div>
+
+      <div
+        v-show="!room.canJoin"
+        class="py-4 px-5 bg-green-500 text-white font-bold rounded-full text-xl flex justify-center items-center"
+      >
+        Score: {{ myScore }}
       </div>
     </div>
     <div class="w-full h-full">
       <PlayerList v-show="room.canJoin" />
+      <Question v-if="room.view == 'question'" />
     </div>
   </div>
 </template>
@@ -26,16 +38,17 @@
 <script>
 // @ is an alias to /src
 import PlayerList from "./PlayerList";
+import Question from "./Question";
+// import Leaderboard from "./leaderboard";
 export default {
-  name: "SinglePlay",
+  name: "MultiPlay",
   components: {
     PlayerList,
+    Question,
+    // Leaderboard,
   },
   data() {
-    return {
-      question: {},
-      colors: ["#e2e8f0", "#e2e8f0", "#e2e8f0", "#e2e8f0"],
-    };
+    return {};
   },
   mounted() {
     if (this.room == false) this.$router.push("/");
@@ -44,20 +57,13 @@ export default {
     room() {
       return this.$store.state.room;
     },
+    myScore() {
+      let you;
+      for (let p of this.room.players) if (p.id == this.$socket.id) you = p;
+      return you.score;
+    },
   },
   methods: {
-    next() {
-      this.colors = ["#e2e8f0", "#e2e8f0", "#e2e8f0", "#e2e8f0"];
-    },
-    answer(answer) {
-      if (this.ifAnswer) return;
-      this.ifAnswer = true;
-      console.log({ A: 0, B: 1, C: 2, D: 3 }[answer]);
-      this.colors[{ A: 0, B: 1, C: 2, D: 3 }[answer]] = "#ef4444";
-      this.colors[{ A: 0, B: 1, C: 2, D: 3 }[this.question.correctAnswer]] =
-        "#10b981";
-    },
-
     exitRoom() {
       this.$socket.emit("leaveRoom");
       setTimeout(() => {
@@ -68,3 +74,17 @@ export default {
   },
 };
 </script>
+<style>
+.fade-enter-active {
+  transition: all 0.5s ease-in-out;
+}
+.fade-enter {
+  opacity: 0;
+  transform: translateY(60px);
+}
+.fade-leave-active {
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(60px);
+}
+</style>

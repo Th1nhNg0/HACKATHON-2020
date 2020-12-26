@@ -1,5 +1,6 @@
 <template>
   <div class="text-center pt-2">
+    <button @click="createRoom">Create Room</button>
     <span class="font-bold text-3xl ">Room List</span>
     <div class="w-full   overflow-hidden rounded-25px text-left">
       <div class="overflow-auto h-full w-full">
@@ -46,7 +47,7 @@ export default {
   methods: {
     createRoom() {
       this.$socket.emit("setUsername", this.$store.state.username);
-      this.$socket.emit("createRoom", this.roomName);
+      this.$socket.emit("createRoom", "test");
       setTimeout(() => this.$router.push("/multiplay"), 500);
     },
     joinRoom(id) {
