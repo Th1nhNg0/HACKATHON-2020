@@ -1,0 +1,28 @@
+{
+  "name": "project_x_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase": "^8.2.1",
+    "firebase-admin": "^9.4.2",
+    "node-fetch": "^2.6.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Th1nhNg0/project-x-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Th1nhNg0/project-x-backend/issues"
+  },
+  "homepage": "https://github.com/Th1nhNg0/project-x-backend#readme"
+}
