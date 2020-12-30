@@ -21,7 +21,7 @@ npm run start
 After running on local, you cant deploy by doing this:
 
 ```
-git subtree split --branch deploy --prefix server
+git subtree split --branch deploy --prefix server/
 ```
 
 make a new branch name `deploy`
