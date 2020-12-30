@@ -3,10 +3,10 @@ const express = require("express");
 const app = express();
 const http = require("http").createServer(app);
 
-app.use(express.static("../client/dist"));
+app.use(express.static("./dist"));
 const path = require("path");
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve("../client/dist", "index.html"));
+  res.sendFile(path.resolve("./dist", "index.html"));
 });
 
 http.listen(process.env.PORT || 3000, () => {
