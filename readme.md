@@ -6,6 +6,7 @@ compile client code:
 
 ```
 cd client
+npx tailwindcss build public/styles.css -o public/index.css  // build tailwindcss
 npm run build
 ```
 
