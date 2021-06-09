@@ -1,5 +1,7 @@
 # AthenaEdu
 
+Our teams's project in SPKT HACKATHON. Using vuejs and firebase
+
 ## how to run:
 
 compile client code:
