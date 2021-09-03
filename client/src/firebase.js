@@ -4,12 +4,12 @@ import "firebase/firestore";
 
 // firebase init - add your own config here
 const firebaseConfig = {
-  apiKey: "AIzaSyA_2qzm0HVaHDI9hlNx3IH5Y-7D2uwlO24",
-  authDomain: "hackathon-hcmute-2020.firebaseapp.com",
-  projectId: "hackathon-hcmute-2020",
-  storageBucket: "hackathon-hcmute-2020.appspot.com",
-  messagingSenderId: "913164349281",
-  appId: "1:913164349281:web:ac0adfe03f9558667e9f20",
+  apiKey: "AIzaSyDuvuG_lUGkp26v2piTNPxrOAT709XnSBU",
+  authDomain: "admin-dashboard-demo-956c2.firebaseapp.com",
+  projectId: "admin-dashboard-demo-956c2",
+  storageBucket: "admin-dashboard-demo-956c2.appspot.com",
+  messagingSenderId: "145922470424",
+  appId: "1:145922470424:web:330dbde6a55c4bfb2e496d",
 };
 
 firebase.initializeApp(firebaseConfig);
