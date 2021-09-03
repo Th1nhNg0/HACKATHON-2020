@@ -1,6 +1,6 @@
 # AthenaEdu
 
-Our teams's project in SPKT HACKATHON. Using vuejs and firebase
+Our teams's project in SPKT HACKATHON 2020. Using vuejs and firebase
 
 ## how to run:
 
